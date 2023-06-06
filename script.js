@@ -14,6 +14,7 @@ async function sendNewsLetter(e) {
 
     let body = new FormData()
     body.append("email", email.value)
+    body.append("date", new Date())
 
     try {
         let data = await fetch(url, { method: "POST", body })
