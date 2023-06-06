@@ -20,6 +20,7 @@ async function sendNewsLetter(e) {
         if (data && data.status && data.status == 200) {
             popupText.style.color = "6487B2"
             popupText.innerHTML = "Submitted Successfully"
+            email.value=""
             closeButton.style.display="block"
             closeButton.style.opacity = 1
             closeButton.style.cursor = "pointer"
