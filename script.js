@@ -39,6 +39,10 @@ async function sendNewsLetter(e) {
         closeButton.style.opacity = 1
         closeButton.style.cursor = "pointer"
     }
+
+    setTimeout(() => {
+        popup.style.display = "none"
+    }, 2000);
 }
 closeButton.addEventListener("click", () => {
     popup.style.display = "none"
