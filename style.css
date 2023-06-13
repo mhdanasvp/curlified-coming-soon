@@ -483,11 +483,18 @@ body {
         width:180px;
     }
     .footer {
+        /* width: 320px; */
         padding:100px 50px; 
         flex-direction: column;
     }
+    .footer .footer-group {
+        width: 320px;
+    }
     .footer .footer-left {
         flex-direction: column;
+    }
+    .footer .footer-right {
+        justify-content: flex-start;
     }
     .footer .footer-group {
         margin-top: 50px;
@@ -505,5 +512,6 @@ body {
         border-radius: 7px;
 
     }
+
     
   }
