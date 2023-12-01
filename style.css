@@ -17,10 +17,20 @@
 body {
     background-color: var(--white);
 }
-
+a {cursor: pointer;text-decoration: none;}
+.cf-header {padding: 20px 0;position: fixed;z-index: 999;top: 0;left: 0;right: 0;}
+.cf-header.active {background-color: #FFF;}
+.cf-container {width: 1200px;max-width: 1200px;margin: auto;}
+.cf-header .cf-container{display: flex;align-items: center;gap: 70px;}
+.cf-navbar {display: flex;align-items: center;gap: 20px;}
+.cf-navbar li {list-style-type: none;}
+.cf-navbar li a {text-decoration: none;cursor: pointer;color: #000;}
+.cf-navbar li a:hover {text-decoration: underline; color: #6487B2;}
+.footer .cf-navbar {width: 100%;flex-basis: 100%;margin-top: 50px;}
+.menu {display: none;}
 .landing-container {
     width: 100%;
-    height: 115vh;
+    min-height: 100vh;
     background: url("./assets/Bg.png");
     background-position: center center;
     background-repeat: no-repeat;
@@ -32,12 +42,7 @@ body {
     padding-left: 150px;
 }
 
-.landing-container .logo {
-    padding-top: 30px;
-
-}
-
-.landing-container .logo img {
+.logo img {
     height: 56px;
     object-fit: contain;
 }
@@ -54,7 +59,7 @@ body {
 .title {
     font-size: 60px;
     font-weight: 800;
-    color: var(--blue);
+    color: var(--blue);    margin-top: 200px;
 }
 
 .title-bold {
@@ -222,14 +227,16 @@ body {
 }
 
 .footer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 150px;
+    
+    padding: 50px 0;
     background-color: var(--light);
 
 }
-
+.footer .cf-container{
+    display: flex;flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
 .footer h4 {
     font-size: 20px;
     color: var(--black);
@@ -245,14 +252,8 @@ body {
 
 .footer .footer-left {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.footer .footer-group {
-    min-width: 300px;
-
-
+    justify-content: space-between;
+    align-items: center;width: 50%;
 }
 .footer .footer-group a{
     text-decoration: none;
@@ -267,10 +268,9 @@ body {
 }
 
 .footer .footer-right {
-    width: 100%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: center;width: 50%;
 }
 .input-group{
     border: 1px solid #ccc;
@@ -339,16 +339,14 @@ body {
             cursor: not-allowed;
     }
 @media only screen and (max-width: 768px) {
+    .cf-container{width: 100%;max-width: 100%;}
+    .cf-header .cf-container {padding: 0 15px;justify-content: space-between;}
+    .cf-header .cf-navbar {display: none;flex-direction: column; position: absolute; background: #FFF; width: 100%; right: 0; top: 80px; padding: 20px; box-shadow: 0 0 30px #aaa;}
+    .menu {display: block;cursor: pointer;}
+
     .wrapper {
         width: 100%;
         padding-left: 0;
-    }
-    .landing-container .logo {
-        padding-top: 10px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
     .landing-container .logo img{
         height: 40px;
@@ -482,23 +480,8 @@ body {
     .leaf-bottom {
         width:180px;
     }
-    .footer {
-        /* width: 320px; */
-        padding:100px 50px; 
-        flex-direction: column;
-    }
-    .footer .footer-group {
-        width: 320px;
-    }
-    .footer .footer-left {
-        flex-direction: column;
-    }
-    .footer .footer-right {
-        justify-content: flex-start;
-    }
-    .footer .footer-group {
-        margin-top: 50px;
-    }
+    .footer .cf-container {flex-direction: column;padding: 0 15px;gap: 20px;}.footer .footer-left,.footer .footer-right {width: 100%;}
+    .footer .cf-navbar {margin-top: 20px;flex-wrap: wrap;}
     .input-group{
         border: none;
         padding: 0px;

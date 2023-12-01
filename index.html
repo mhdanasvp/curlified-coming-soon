@@ -16,12 +16,28 @@
 
 <body>
     <div class="landing-container">
-        <div class="logo wrapper">
-            <img src="./assets/logo.png" alt="">
-        </div>
-        <div class="title-container wrapper">
-            <h1 class="title">REVOLUTIONIZING <br /><span class="title-bold">CURLS</span></h1>
-            <p class="title-light">Launching Soon</p>
+        <header class="cf-header">
+            <div class="cf-container">
+                <div class="logo">
+                    <a href="https://curlified.com/"><img src="./assets/logo.png" alt=""></a>
+                </div>
+                <nav>
+                    <p class="menu" onclick="toggleMenu()"> Menu</p>
+                    <ul class="cf-navbar" id="menu-box">
+                        <li><a href="https://website.curlified.in/">Shop</a></li>
+                        <li><a href="https://website.curlified.in/about-us">About us</a></li>
+                        <li><a href="https://website.curlified.in/contact-us">Contact us</a></li>
+                        <li><a href="https://website.curlified.in/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="https://website.curlified.in/terms-services">Terms and Conditions</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="cf-container">
+            <div class="title-container">
+                <h1 class="title">REVOLUTIONIZING <br /><span class="title-bold">CURLS</span></h1>
+                <p class="title-light">Launching Soon</p>
+            </div>
         </div>
     </div>
     <div class="we-care-container">
@@ -87,27 +103,36 @@
         <img class="leaf-bottom" src="./assets//leaf bottom.png" alt="">
     </div>
     <div class="footer">
-        <div class="footer-left">
-            <div class="footer-group">
-                <h4>Follow us</h4>
-                <a href=""> <img src="./assets/instagram (5).png" alt=""></a>
-                <a href=""> <img src="./assets/facebook (5).png" alt=""></a>
-            </div>
-            <div class="footer-group">
-                <h4>Contact us</h4>
-                <a href="mailto:mhd.anas.vp@gmail.com">
-                    <p>info@curlified.com</p>
-                </a>
-            </div>
-        </div>
-        <div class="footer-right">
-            <div class="footer-group">
-                <h4>News letters</h4>
-                <div class="input-group">
-                    <input id="newsLetter" placeholder="Enter your email" type="text">
-                    <button onclick="sendNewsLetter()" id="sumbitButton">Submit</button>
+        <div class="cf-container">
+            <div class="footer-left">
+                <div class="footer-group">
+                    <h4>Follow us</h4>
+                    <a href=""> <img src="./assets/instagram (5).png" alt=""></a>
+                    <a href=""> <img src="./assets/facebook (5).png" alt=""></a>
+                </div>
+                <div class="footer-group">
+                    <h4>Contact us</h4>
+                    <a href="mailto:mhd.anas.vp@gmail.com">
+                        <p>info@curlified.com</p>
+                    </a>
                 </div>
             </div>
+            <div class="footer-right">
+                <div class="footer-group">
+                    <h4>News letters</h4>
+                    <div class="input-group">
+                        <input id="newsLetter" placeholder="Enter your email" type="text">
+                        <button onclick="sendNewsLetter()" id="sumbitButton">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <ul class="cf-navbar">
+                <li><a href="https://website.curlified.in/">Shop</a></li>
+                <li><a href="https://website.curlified.in/about-us">About us</a></li>
+                <li><a href="https://website.curlified.in/contact-us">Contact us</a></li>
+                <li><a href="https://website.curlified.in/privacy-policy">Privacy Policy</a></li>
+                <li><a href="https://website.curlified.in/terms-services">Terms and Conditions</a></li>
+            </ul>
         </div>
     </div>
     <div id="popup" class="popup">
@@ -119,5 +144,23 @@
 
 </body>
 <script src="./script.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    $(window).on("scroll", function() {
+    if($(window).scrollTop() > 50) {
+        $(".cf-header").addClass("active");
+    } else {
+       $(".cf-header").removeClass("active");
+    }
+});
+function toggleMenu() {
+  var menuBox = document.getElementById('menu-box');    
+  if(menuBox.style.display == "flex") { // if is menuBox displayed, hide it
+    menuBox.style.display = "none";
+  }
+  else { // if is menuBox hidden, display it
+    menuBox.style.display = "flex";
+  }
+}
+</script>
 </html>
